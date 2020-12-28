@@ -1,0 +1,19 @@
+.toggle {
+  border-bottom: 8px solid #222;
+}
+.toggle__title {
+  margin-bottom: 5px;
+  margin: auto;
+}
+.toggle__title > h1 {
+  font-size: 50px;
+  color: white;
+}
+
+.toggle__container {
+  display: flex;
+  flex-direction: column;
+  padding: 70px 45px;
+
+  margin: auto;
+}

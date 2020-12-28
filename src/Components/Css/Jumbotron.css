@@ -47,24 +47,25 @@
 
 .jumbo__pane__data > h1 {
   font-size: 35px;
-  color: gray;
+  color: white;
 }
 
 @media (max-width: 600px) {
   .jumbo__pane__data > h1 {
     font-size: 20px;
-    color: gray;
+    color: white;
   }
 }
 
 .jumbo__pane__data > h2 {
   font-size: 25px;
-  color: gray;
+  color: white;
 }
 
 @media (max-width: 600px) {
   .jumbo__pane__data > h2 {
     font-size: 15px;
-    color: gray;
+    color: white;
+    margin-bottom: 10px;
   }
 }

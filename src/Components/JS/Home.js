@@ -1,11 +1,15 @@
 import React from "react";
 import JsonData from "../../fixtures/jumbo.json";
 import Jumbo from "./Jumbotron";
-
+import Footer from "./Footer.js";
+import Toggle from "./Toggle";
+import Email from "./Email";
+import Banner from "./Banner";
+import "../Css/Email.css";
 function Home() {
-  console.log("here");
   return (
     <div className="home">
+      <Banner />
       {JsonData.map((item) => (
         <Jumbo
           id={item.id}
@@ -15,6 +19,12 @@ function Home() {
           direction={item.direction}
         />
       ))}
+      <div className="home__toggle">
+        <Toggle />
+      </div>
+      <div className="home__footer">
+        <Footer />
+      </div>
     </div>
   );
 }
