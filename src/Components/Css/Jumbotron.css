@@ -1,0 +1,70 @@
+.jumbo__container {
+  display: flex;
+  border-bottom: 8px solid #222;
+  padding: 50px 5%;
+  color: black;
+  overflow: hidden;
+}
+
+.jumbo__pane__row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1350px;
+  margin: auto;
+  width: 100%;
+  @media (max-width: 600px;) {
+    flex-direction: column;
+  }
+}
+
+.jumbo__pane__row__reverse {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  max-width: 1350px;
+  margin: auto;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .jumbo__pane__row__reverse,
+  .jumbo__pane__row {
+    flex-direction: column;
+  }
+}
+
+.jumbo__pane__data {
+  width: 50%;
+}
+
+.jumbo__pane__data > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.jumbo__pane__data > h1 {
+  font-size: 35px;
+  color: gray;
+}
+
+@media (max-width: 600px) {
+  .jumbo__pane__data > h1 {
+    font-size: 20px;
+    color: gray;
+  }
+}
+
+.jumbo__pane__data > h2 {
+  font-size: 25px;
+  color: gray;
+}
+
+@media (max-width: 600px) {
+  .jumbo__pane__data > h2 {
+    font-size: 15px;
+    color: gray;
+  }
+}
