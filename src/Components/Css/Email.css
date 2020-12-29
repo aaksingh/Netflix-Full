@@ -29,6 +29,7 @@
   color: white;
   font-size: 40px;
   padding-left: 10px;
+  border: none;
 }
 
 @media (max-width: 700px) {
@@ -37,6 +38,7 @@
     height: 50px;
     font-size: 20px;
     padding-left: 10px;
+    border: none;
   }
 }
 
@@ -45,6 +47,7 @@
   background-color: red;
   width: 240px;
   height: 70px;
+  border: none;
   border-radius: 6px;
   font-size: 23px;
   cursor: pointer;

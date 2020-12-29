@@ -10,6 +10,7 @@ function Home() {
   return (
     <div className="home">
       <Banner />
+
       {JsonData.map((item) => (
         <Jumbo
           id={item.id}

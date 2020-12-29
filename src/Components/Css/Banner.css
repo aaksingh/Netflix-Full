@@ -1,8 +1,56 @@
-.banner {
-  margin-right: 0;
-  margin-left: 0;
-  margin-top: 0;
+/* .banner {
   height: 671px;
-  width: 1350px;
+  /* width: 1350px; 
+  object-fit: contain;
   filter: brightness(50%);
+} */
+.banner {
+  object-fit: contain;
+  height: 671px;
+  filter: brightness();
+}
+
+.banner__contents {
+  padding: 10px 15px;
+  margin: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner__contents > img {
+  height: 100px;
+  width: 200px;
+}
+.banner__middle {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+.banner__middle > h2,
+h4 {
+  color: white;
+}
+
+.banner__middle > h2 {
+  font-size: 45px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.banner__contents > button {
+  background-color: red;
+  border-radius: 3px;
+  border: none;
+  height: 30px;
+  width: 70px;
+  color: white;
+  font-weight: 600;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.banner__contents > h4 {
+  font-family: sans-serif;
+  font-weight: 600;
 }

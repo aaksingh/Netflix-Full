@@ -13,7 +13,7 @@ function Email() {
           <input placeholder="Enter Your Email"></input>
         </div>
         <div className="email__button">
-          <button type="button">GET STARTED</button>
+          <button type="button">GET STARTED ></button>
         </div>
       </div>
     </div>
