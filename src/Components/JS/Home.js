@@ -3,7 +3,7 @@ import JsonData from "../../fixtures/jumbo.json";
 import Jumbo from "./Jumbotron";
 import Footer from "./Footer.js";
 import Toggle from "./Toggle";
-import Email from "./Email";
+
 import Banner from "./Banner";
 import "../Css/Email.css";
 function Home() {
