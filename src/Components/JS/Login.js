@@ -1,6 +1,32 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { auth, provider } from "../Firebase/Firebase.js";
+import { useStateValue } from "../../StateProvider.js";
+import { actionTypes } from "../../reducer";
 import "../Css/Login.css";
+
 function Login() {
+  const [state, dispatch] = useStateValue();
+
+  const history = useHistory();
+  function login() {
+    history.push(`/`);
+  }
+
+  const signingIn = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result);
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
   return (
     <div
       className="login"
@@ -42,6 +68,18 @@ function Login() {
             <div className="login__help">
               <p>Need help?</p>
             </div>
+          </div>
+          <div className="login__extra">
+            <button onClick={signingIn}>Login with google</button>
+
+            <div onClick={login} className="login__signup">
+              <p>New to Netflix?</p>
+              <button> Sign Up Now</button>
+            </div>
+            <p>
+              This page is protected by Google reCAPTCHA to ensure you're not a
+              bot.
+            </p>
           </div>
         </div>
       </div>

@@ -94,3 +94,39 @@
 .login__help {
   color: gray;
 }
+
+.login__extra {
+  margin-top: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.login__signup {
+  display: flex;
+  align-items: center;
+}
+
+.login__extra > p {
+  color: gray;
+}
+.login__extra > button {
+  cursor: pointer;
+  background-color: #4285f4;
+  font-weight: 300;
+  height: 40px;
+  width: 200px;
+  color: white;
+}
+.login__signup > p {
+  color: gray;
+}
+.login__signup > button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.login__signup > button:focus {
+  outline: none;
+}
