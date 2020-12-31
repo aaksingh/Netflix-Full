@@ -24,13 +24,15 @@ function Nav() {
         />
       </div>
       <div className="nav__left">
-        <div className="nav__inputtrans">
-          {toggleshow ? (
-            <input className="nav__input" placeholder="search"></input>
-          ) : null}
-        </div>
         <div className="nav__Search">
           <SearchIcon onClick={() => settoggleshow(!toggleshow)} />
+        </div>
+        <div className="nav__inputtrans">
+          {toggleshow ? (
+            <div>
+              <input className="nav__input" placeholder="search"></input>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
