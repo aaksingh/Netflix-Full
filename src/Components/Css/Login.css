@@ -1,6 +1,6 @@
 .login {
   object-fit: contain;
-  height: 1500px;
+  height: 800px;
 }
 
 .login__logo > img {
@@ -129,4 +129,32 @@
 }
 .login__signup > button:focus {
   outline: none;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 60px;
+  margin-left: 60px;
+  margin-top: 60px;
+}
+.login__form > input {
+  background: #333;
+  border-radius: 4px;
+  border: 0;
+  color: white;
+  height: 50px;
+  line-height: 50px;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+
+.login__form > input:last-of-type {
+  background: red;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 3px;
+  cursor: pointer;
 }

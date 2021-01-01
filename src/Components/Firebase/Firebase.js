@@ -13,7 +13,7 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export { auth, provider };
+export { auth, provider, firebaseApp };
 
 // const firebaseConfig = {
 //   apiKey: "AIzaSyBeWeG1q3m4KkYShXdHgCiSgKTQxLEGuf4",

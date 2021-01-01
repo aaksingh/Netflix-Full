@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { auth, provider } from "../Firebase/Firebase.js";
+import { auth, provider, firebaseApp } from "../Firebase/Firebase.js";
 import { useStateValue } from "../../StateProvider.js";
 import { actionTypes } from "../../reducer";
 import "../Css/Login.css";
+import firebase from "firebase";
 
 function Login() {
-  const [state, dispatch] = useStateValue();
-
   const history = useHistory();
+  const [state, dispatch] = useStateValue();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const isInvalid = password === "" || email === "";
+
+  const handleSignin = (event) => {
+    event.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
+      })
+      .catch((error) => {
+        setEmail("");
+        setPassword("");
+        alert(error.message);
+      });
+  };
+
   function login() {
     history.push(`/`);
   }
@@ -17,7 +41,6 @@ function Login() {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result);
         dispatch({
           type: actionTypes.SET_USER,
           user: result.user,
@@ -45,21 +68,25 @@ function Login() {
       <div className="login__login">
         <div className="login__page">
           <div className="login__details">
-            <h2>Sign In</h2>
-            <div className="login__email">
-              <p>Email or Phone number</p>
-
-              <input></input>
-            </div>
+            /* Signin Form */
+            <form className="login__form" onSubmit={handleSignin} method="POST">
+              <input
+                placeholder="Email Address"
+                value={email}
+                type="text"
+                onChange={({ target }) => setEmail(target.value)}
+              ></input>
+              <input
+                placeholder="Password"
+                type="password"
+                autoComplete="off"
+                value={password}
+                onChange={({ target }) => setPassword(target.value)}
+              ></input>
+              <input disabled={isInvalid} type="submit"></input>
+            </form>
           </div>
-          <div className="login__details">
-            <div className="login__email">
-              <p>Password</p>
 
-              <input type="password"></input>
-            </div>
-          </div>
-          <button className="login__button">Sign In</button>
           <div className="login__bottom">
             <div className="login__check">
               <input type="checkbox"></input>
