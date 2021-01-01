@@ -8,7 +8,7 @@ import Nav from "./Components/JS/Nav";
 import requests from "./Components/JS/requests";
 import { useStateValue } from "./StateProvider";
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   return (
     <Router>
       <div className="App">

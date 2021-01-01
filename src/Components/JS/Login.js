@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { auth, provider, firebaseApp } from "../Firebase/Firebase.js";
+import { auth, provider } from "../Firebase/Firebase.js";
 import { useStateValue } from "../../StateProvider.js";
 import { actionTypes } from "../../reducer";
 import "../Css/Login.css";
-import firebase from "firebase";
 
 function Login() {
   const history = useHistory();
-  const [state, dispatch] = useStateValue();
+  const [dispatch] = useStateValue();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const isInvalid = password === "" || email === "";
 
@@ -68,7 +66,6 @@ function Login() {
       <div className="login__login">
         <div className="login__page">
           <div className="login__details">
-            /* Signin Form */
             <form className="login__form" onSubmit={handleSignin} method="POST">
               <input
                 placeholder="Email Address"
