@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "firebase": "^8.2.1",
+    "latest-version": "^5.1.0",
     "movie-trailer": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -19,7 +20,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": " react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

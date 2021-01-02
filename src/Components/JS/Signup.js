@@ -1,53 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { auth, provider } from "../Firebase/Firebase.js";
 import { useStateValue } from "../../StateProvider.js";
 import { actionTypes } from "../../reducer";
-import "../Css/Login.css";
-
-function Login() {
-  const history = useHistory();
-  const [state, dispatch] = useStateValue();
+import { auth, provider } from "../Firebase/Firebase.js";
+function Signup() {
   const [email, setEmail] = useState("");
+  const [state, dispatch] = useStateValue();
+
   const [password, setPassword] = useState("");
-
   const isInvalid = password === "" || email === "";
-
+  const history = useHistory();
   const handleSignin = (event) => {
     event.preventDefault();
 
     auth
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         dispatch({
           type: actionTypes.SET_USER,
           user: result.user,
         });
-        history.push("/home");
       })
       .catch((error) => {
         setEmail("");
         setPassword("");
-        alert(error.message);
-        console.log("error");
-      });
-  };
-
-  function signup() {
-    history.push(`/signup`);
-  }
-
-  const signingIngoogle = () => {
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        dispatch({
-          type: actionTypes.SET_USER,
-          user: result.user,
-        });
-        history.push("/home");
-      })
-      .catch((error) => {
         alert(error.message);
       });
   };
@@ -86,34 +63,10 @@ function Login() {
               <input disabled={isInvalid} type="submit"></input>
             </form>
           </div>
-
-          <div className="login__bottom">
-            <div className="login__check">
-              <input type="checkbox"></input>
-              <p>Remember Me</p>
-            </div>
-            <div className="login__help">
-              <p>Need help?</p>
-            </div>
-          </div>
-          <div className="login__extra">
-            <div className="login__oauth">
-              <button onClick={signingIngoogle}>Login with google</button>
-              <button>Login with facebook</button>
-            </div>
-            <div onClick={signup} className="login__signup">
-              <p>New to Netflix?</p>
-              <button> Sign Up Now</button>
-            </div>
-            <p>
-              This page is protected by Google reCAPTCHA to ensure you're not a
-              bot.
-            </p>
-          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Signup;

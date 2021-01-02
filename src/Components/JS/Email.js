@@ -1,6 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 function Email() {
+  const history = useHistory();
+  function signup() {
+    history.push(`/signup`);
+  }
   return (
     <div className="email">
       <div className="email__header">
@@ -13,7 +18,9 @@ function Email() {
           <input placeholder="Enter Your Email"></input>
         </div>
         <div className="email__button">
-          <button type="button">GET STARTED ></button>
+          <button onClick={signup} type="button">
+            GET STARTED
+          </button>
         </div>
       </div>
     </div>
